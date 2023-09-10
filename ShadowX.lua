@@ -71,14 +71,14 @@ end
 local ShadowX = {}
 
 function ShadowX:ToggleUi()
-if game.CoreGui:FindFirstChild("Shadow").Enabled == true then -- oh am dumb
+if game.CoreGui:FindFirstChild("Shadow").Enabled == true then
 game.CoreGui:FindFirstChild("Shadow").Enabled = false
 else
 game.CoreGui:FindFirstChild("Shadow").Enabled = true
 end
 end
 
-function ShadowX:Window(text,gamenme,logo,keybind)
+function ShadowX:Window(text,gamename,logo,keybind)
     local hubname = text
     local gamename = gamenme
 	local uihide = false
@@ -91,8 +91,8 @@ function ShadowX:Window(text,gamenme,logo,keybind)
 	    gamename = ""..PlaceName.Name
     end
 	
-	local Shadow = Instance.new("ScreenGui") -- guess i am using hubname wrong
-	Shadow.Name = "Shadow" -- wait
+	local Shadow = Instance.new("ScreenGui") 
+	Shadow.Name = "Shadow" 
 	Shadow.Parent = game.CoreGui
 	Shadow.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
