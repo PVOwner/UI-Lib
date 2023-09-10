@@ -78,7 +78,7 @@ game.CoreGui:FindFirstChild("Shadow").Enabled = true
 end
 end
 
-function ShadowX:Window(text,gamename,logo,keybind)
+function ShadowX:Window(text,gamenme,logo,keybind)
     local hubname = text
     local gamename = gamenme
 	local uihide = false
