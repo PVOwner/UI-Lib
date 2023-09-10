@@ -10,7 +10,7 @@ local PlaceName = game:GetService("MarketplaceService"):GetProductInfo(game.Plac
     wait(1)
 
 do local GUI = game.CoreGui:FindFirstChild("Shadow");if GUI then GUI:Destroy();end;if _G.Color == nil then
-       _G.Color = Color3.fromRGB(76,23,90)
+       _G.Color = Color3.fromRGB(147,112,219)
    end 
 end
 
@@ -71,7 +71,7 @@ end
 local ShadowX = {}
 
 function ShadowX:ToggleUi()
-if game.CoreGui:FindFirstChild("Shadow").Enabled == true then 
+if game.CoreGui:FindFirstChild("Shadow").Enabled == true then -- oh am dumb
 game.CoreGui:FindFirstChild("Shadow").Enabled = false
 else
 game.CoreGui:FindFirstChild("Shadow").Enabled = true
