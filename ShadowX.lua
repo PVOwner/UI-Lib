@@ -1,10 +1,5 @@
 if not game:IsLoaded() then repeat game.Loaded:Wait() until game:IsLoaded() end
 
-do local GUI = game.CoreGui:FindFirstChild("Shadow");if GUI then GUI:Destroy();end;if _G.Color == nil then
-       _G.Color = Color3.fromRGB(147,112,219)
-   end 
-end
-
 repeat wait() until game:GetService("Players")
 
 if not game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then repeat wait() until game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart") end
@@ -79,16 +74,11 @@ end
 end
 
 local library = {}
-local PlaceName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId)
 
-function library:AddWindow(text,gamenme,keybind)
+function library:AddWindow(text,keybind)
 local bind = keybind or Enum.KeyCode.RightControl
 local ff = false
 local currenttab = ""
-local gamename = gamenme
-if gamename == "" then 
-	gamename = ""..PlaceName.Name
-end
 
 local ShadowX = Instance.new("ScreenGui")
 ShadowX.Name = "UlLib"
@@ -263,14 +253,6 @@ Main:TweenSize(UDim2.new(0, 600, 0, 350),"Out","Quad",0.2,true)
 end
 end
 end)
-
-function library:ToggleUi()
-if game.CoreGui:FindFirstChild("Shadow").Enabled == true then 
-game.CoreGui:FindFirstChild("Shadow").Enabled = false
-else
-game.CoreGui:FindFirstChild("Shadow").Enabled = true
-end
-end
 
 local uitab = {}
 
@@ -1000,3 +982,23 @@ return main
 end
 return uitab
 end
+
+local ScreenGui = Instance.new("ScreenGui")
+local Toggle = Instance.new("TextButton")
+
+ScreenGui.Name = "ScreenGui"
+ScreenGui.Parent = game.CoreGui
+
+Toggle.Name = "Toggle"
+Toggle.Parent = ScreenGui
+Toggle.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+Toggle.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
+Toggle.Size = UDim2.new(0, 50, 0, 50)
+Toggle.Font = Enum.Font.Code
+Toggle.Text = "SX"
+Toggle.TextColor3 = Color3.fromRGB(255, 0, 0)
+Toggle.TextScaled = true
+Toggle.MouseButton1Down:connect(function()
+game:GetService("VirtualInputManager"):SendKeyEvent(true,305,false,game)
+game:GetService("VirtualInputManager"):SendKeyEvent(false,305,false,game)
+end)
