@@ -194,6 +194,13 @@ UserText.TextSize = 11.000
 UserText.TextWrapped = true
 UserText.TextXAlignment = Enum.TextXAlignment.Left
 
+function library:ToggleUI()
+if ShadowX.Visible = true then
+    ShadowX.Visible = false
+else
+    ShadowX.Visible = true
+end
+
 local UITextSizeConstraint = Instance.new("UITextSizeConstraint")
 UITextSizeConstraint.Parent = UserText
 UITextSizeConstraint.MaxTextSize = 11
@@ -996,9 +1003,8 @@ Toggle.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
 Toggle.Size = UDim2.new(0, 50, 0, 50)
 Toggle.Font = Enum.Font.Code
 Toggle.Text = "SX"
-Toggle.TextColor3 = Color3.fromRGB(255, 0, 0)
+Toggle.TextColor3 = Color3.fromRGB(140, 101, 211)
 Toggle.TextScaled = true
 Toggle.MouseButton1Down:connect(function()
-game:GetService("VirtualInputManager"):SendKeyEvent(true,305,false,game)
-game:GetService("VirtualInputManager"):SendKeyEvent(false,305,false,game)
+library.ToggleUI()
 end)
